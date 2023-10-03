@@ -1,0 +1,61 @@
+Class Board_manager
+
+	self.nested_dict = {
+            'first_column': {'1row': 0, '2row': 0, '3row': 0},
+            'second_column': {'1row': 0, '2row': 0, '3row': 0},
+            'third_column': {'1row': 0, '2row': 0, '3row': 0}
+        }
+
+        self.duplicative_state = [False,False,False]
+        self.triplicative_state = [False,False,False]
+        self.score_list = [0,0,0]
+
+"nested_dict" has the content of the board_manager
+
+"duplicative_state" or "triplicative_state" have the information of the states of the column, it is useful
+has this will change color of the dices
+
+"score_list" stores the score of each column, and we gather the total score by sum each one of those
+
+__________________________
+
+
+We create a new object Board_manager()
+
+And we have 2 things we can do
+
+We can insert a new dice with insert_new_dice(),
+THIS will update the nested_dict, the state_lists necessary and the score
+
+Or we can delete a existing dice with delete_dices(),
+THIS will update the nested_dit, the state_lists necessary, the score and use a sort_board command.
+the soarting method will move down the dices.
+
+
+
+
+
+
+
+Class Board
+
+-Now that we have the information in nested_dict(),
+we iterate through the nested_dict() inside Board class and everytime there is a dice in a position we store it,
+inserting in a list called Drawn_dices(), which we will update everytime its called.
+
+self.firstColList = []
+self.secondColList = []
+self.thirdColList = []
+self.dicesStored_byColumn = [self.firstColList ,self.secondColList, self.thirdColList]
+
+-We have a list with the dices to be drawn. We iterate through the list and create a new dice() object for every new dice.
+
+
+
+
+
+FIXES AND BUGS
+
+-the dices get deleted but after the player turn
+-the dices sort by number, when i only want them to go down when there is a 0 below
+-when dices get down because have a 0 below, the color is reset
